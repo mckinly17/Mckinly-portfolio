@@ -4,31 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mckinly Tayag - Professional Portfolio</title>
-
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
-    <!-- Basic SEO -->
-    <meta name="description" content="Mckinly Tayag - Fraud Analyst & Customer Service Professional portfolio with experience at Alorica and Amazon.">
-
-    <!-- Favicon (optional, simple emoji favicon) -->
-    <link rel="icon" href="data:image/svg+xml,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-      <text y='.9em' font-size='90'>M</text>
-    </svg>">
-
     <style>
-        /* Luxury and Elegant Color Scheme */
         :root {
-            --primary-dark: #1a1a1a; /* Deep charcoal */
-            --accent-gold: #c0a062; /* Soft gold */
+            --primary-dark: #1a1a1a;
+            --accent-gold: #c0a062;
             --text-white: #ffffff;
             --secondary-gray: #4d4d4d;
             --background-gradient: linear-gradient(135deg, #1a1a1a, #333333);
-        }
-
-        * {
-            box-sizing: border-box;
         }
 
         body {
@@ -52,18 +35,18 @@
         }
 
         a:hover {
-            color: #e6c078; /* Lighter gold */
+            color: #e6c078;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(26, 26, 26, 0.9);
+            background: rgba(26, 26, 26, 0.95);
             padding: 1rem 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
         }
 
         nav ul {
@@ -72,7 +55,6 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
         nav ul li {
@@ -84,7 +66,7 @@
             font-weight: 400;
         }
 
-        /* Hero Section */
+        /* Hero Section with Profile Picture */
         #hero {
             height: 100vh;
             display: flex;
@@ -94,19 +76,41 @@
             text-align: center;
             background: var(--background-gradient);
             padding: 0 2rem;
+            position: relative;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(192,160,98,0.1), transparent 70%);
+        }
+
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-gold);
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            object-fit: cover;
+            background: yellow; /* Matches the original background for seamless torn edge */
         }
 
         #hero h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
         }
 
         #hero p {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             max-width: 800px;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Sections */
         section {
             padding: 5rem 2rem;
             max-width: 1200px;
@@ -123,165 +127,141 @@
         section h2::after {
             content: '';
             display: block;
-            width: 50px;
-            height: 2px;
+            width: 80px;
+            height: 3px;
             background: var(--accent-gold);
             margin: 1rem auto 0;
         }
 
-        /* Cards for Experience, Education, Services */
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .card {
             background: var(--secondary-gray);
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(192,160,98,0.2);
         }
 
         .card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
         }
 
-        .card p {
-            font-size: 1rem;
-        }
-
-        .card ul {
-            padding-left: 1.2rem;
-        }
-
-        /* Skills */
         #skills ul {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             list-style: none;
             padding: 0;
+            gap: 1rem;
         }
 
         #skills li {
             background: var(--accent-gold);
             color: var(--primary-dark);
-            padding: 0.5rem 1rem;
-            margin: 0.5rem;
-            border-radius: 20px;
+            padding: 0.7rem 1.4rem;
+            border-radius: 30px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        /* Contact */
         #contact {
             text-align: center;
+            background: linear-gradient(to bottom, #1a1a1a, #0f0f0f);
         }
 
         #contact-info {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
         #contact-info p {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
+            margin: 0.8rem 0;
         }
 
-        /* Grok Chat Integration - Simple JS Chatbot */
         #grok-chat {
             background: var(--secondary-gray);
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 600px;
+            padding: 2.5rem;
+            border-radius: 12px;
+            max-width: 700px;
             margin: 0 auto;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         #chat-output {
-            height: 200px;
+            height: 250px;
             overflow-y: auto;
-            background: #333;
-            padding: 1rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
+            background: #2a2a2a;
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            border: 1px solid #444;
+        }
+
+        #chat-output p {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+        }
+
+        #chat-output p.user {
+            text-align: right;
+            color: var(--accent-gold);
+        }
+
+        #chat-output p.grok {
             text-align: left;
-            font-size: 0.95rem;
+            color: #ffffff;
+            background: #3a3a3a;
+            border-radius: 8px;
+            padding: 0.8rem;
         }
 
         #chat-input {
-            width: 70%;
-            padding: 0.5rem;
+            width: 75%;
+            padding: 0.8rem;
             border: none;
-            border-radius: 4px;
-            margin-right: 0.5rem;
+            border-radius: 8px 0 0 8px;
+            font-size: 1rem;
         }
 
         #chat-submit {
-            padding: 0.5rem 1rem;
+            padding: 0.8rem 1.5rem;
             background: var(--accent-gold);
             color: var(--primary-dark);
             border: none;
-            border-radius: 4px;
+            border-radius: 0 8px 8px 0;
             cursor: pointer;
             font-weight: bold;
         }
 
         #chat-submit:hover {
-            opacity: 0.9;
+            background: #e6c078;
         }
 
-        /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Animations */
         section {
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 0.9s ease, transform 0.9s ease;
         }
 
         section.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        /* Spacing below fixed nav */
-        body::before {
-            content: '';
-            display: block;
-            height: 60px;
-        }
-
-        /* Responsive tweaks */
-        @media (max-width: 768px) {
-            #hero h1 {
-                font-size: 2.4rem;
-            }
-
-            #hero p {
-                font-size: 1.1rem;
-            }
-
-            nav ul li {
-                margin: 0 0.8rem;
-            }
-
-            #chat-input {
-                width: 100%;
-                margin-bottom: 0.5rem;
-            }
-
-            #chat-submit {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -299,13 +279,14 @@
     </nav>
 
     <section id="hero">
+        <img src="https://files.grok.x.ai/grok/attachments/2026-01-08/user_image_0.jpeg" alt="Mckinly Tayag" class="profile-pic">
         <h1>Mckinly Tayag</h1>
-        <p>Detail-oriented professional with 1 year of experience in fraud analysis and customer service, specializing in critical thinking, problem solving, and organizational support. Eager to contribute analytical skills and learning agility to drive operational excellence and customer satisfaction.</p>
+        <p>Detail-oriented professional with 1 year of experience in fraud analysis and customer service, specializing in critical thinking, problem solving, and organizational support.</p>
     </section>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Detail-oriented professional with 1 year of experience in fraud analysis and customer service, specializing in critical thinking, problem solving, and organizational support. Demonstrated success at Alorica and Amazon, leveraging strong English proficiency and adaptability to resolve complex issues and deliver exceptional customer experiences. Eager to contribute analytical skills and learning agility to your team, driving operational excellence and customer satisfaction.</p>
+        <p>Detail-oriented professional with 1 year of experience in fraud analysis and customer service, specializing in critical thinking, problem solving, and organizational support. Demonstrated success at Alorica and Amazon, leveraging strong English proficiency and adaptability to resolve complex issues and deliver exceptional customer experiences. Eager to contribute analytical skills and learning agility to drive operational excellence and customer satisfaction.</p>
     </section>
 
     <section id="experience">
@@ -337,7 +318,7 @@
         <h2>Education</h2>
         <div class="card-container">
             <div class="card">
-                <h3>Senior High School (HUMSS) - San Juan De Dios Educational Foundation, Inc. - College</h3>
+                <h3>Senior High School (HUMSS)<br>San Juan De Dios Educational Foundation, Inc. - College</h3>
                 <p>2022 - 2024</p>
                 <ul>
                     <li>Developed strong analytical and communication skills through Humanities and Social Sciences curriculum.</li>
@@ -345,7 +326,7 @@
                 </ul>
             </div>
             <div class="card">
-                <h3>Junior High School - Pasay City South High School</h3>
+                <h3>Junior High School<br>Pasay City South High School</h3>
                 <p>2018 - 2022</p>
                 <ul>
                     <li>Built foundational knowledge in core academic subjects, fostering adaptability and a commitment to learning.</li>
@@ -382,15 +363,15 @@
         <div class="card-container">
             <div class="card">
                 <h3>Appointment Setting</h3>
-                <p>Leveraging organizational skills and attention to detail, providing efficient appointment setting services to streamline scheduling needs and ensure timely, professional coordination.</p>
+                <p>Leveraging my organizational skills and attention to detail, I provide efficient appointment setting services to streamline your scheduling needs, ensuring timely and professional coordination.</p>
             </div>
             <div class="card">
                 <h3>Customer Care</h3>
-                <p>Delivering top-tier customer care with a focus on empathy, quick resolution, and building rapport to enhance satisfaction and loyalty.</p>
+                <p>With proven experience at Amazon, I offer top-tier customer care services focused on empathy, quick resolution, and building lasting rapport to enhance satisfaction and loyalty.</p>
             </div>
             <div class="card">
                 <h3>Sales Representative</h3>
-                <p>Applying sales strategies and relationship-building skills to drive revenue growth, handle client interactions, and close deals in retail or service-oriented environments.</p>
+                <p>Utilizing sales strategies and relationship-building confidence, I drive revenue growth, handle client interactions, and close deals effectively in retail or service environments.</p>
             </div>
         </div>
     </section>
@@ -401,71 +382,75 @@
             <p>Taguig City, Philippines</p>
             <p>Email: <a href="mailto:mckinlytayag10@gmail.com">mckinlytayag10@gmail.com</a></p>
             <p>Phone: +63 9933771030</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/mckinly-tayag-749517218/" target="_blank" rel="noopener noreferrer">mckinly-tayag-749517218</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/mckinly-tayag-749517218/" target="_blank">linkedin.com/in/mckinly-tayag-749517218</a></p>
         </div>
+
         <div id="grok-chat">
-            <h3>Ask Grok - Your AI Assistant for Inquiries</h3>
-            <p>Ask about my contact info, services, or experience.</p>
+            <h3>Ask Grok — Your AI Assistant</h3>
+            <p>Ask me about Mckinly's experience, services, contact info, or anything related!</p>
             <div id="chat-output"></div>
-            <div>
-                <input type="text" id="chat-input" placeholder="Type your question...">
-                <button id="chat-submit">Send</button>
-            </div>
+            <input type="text" id="chat-input" placeholder="Type your message here...">
+            <button id="chat-submit">Send</button>
         </div>
     </section>
 
     <script>
-        // Simple Grok Chatbot Simulation
         const chatOutput = document.getElementById('chat-output');
         const chatInput = document.getElementById('chat-input');
         const chatSubmit = document.getElementById('chat-submit');
 
         const responses = {
-            contact: 'You can reach Mckinly at mckinlytayag10@gmail.com or +63 9933771030. LinkedIn: https://www.linkedin.com/in/mckinly-tayag-749517218/',
-            services: 'Mckinly offers Appointment Setting, Customer Care, and Sales Representative services.',
-            experience: 'Mckinly has experience as a Fraud Analyst at Alorica and Retail Customer Service Associate at Amazon.',
-            default: 'Hi! I\'m Grok, assisting with Mckinly\'s portfolio. Ask about contact, services, experience, or skills!'
+            contact: "You can reach Mckinly at: Email: mckinlytayag10@gmail.com | Phone: +63 9933771030 | LinkedIn: https://www.linkedin.com/in/mckinly-tayag-749517218/",
+            services: "Mckinly offers: Appointment Setting, Customer Care, and Sales Representative services.",
+            experience: "Mckinly worked as Fraud Analyst at Alorica (Jul–Sep 2025) and Retail Customer Service Associate at Amazon (Oct 2025–Jan 2026).",
+            skills: "Key skills include Empathy, Communication, Fraud Detection/Analysis, Sales Strategy, Retail Operations, AWS tools, and more.",
+            default: "Hello! I'm Grok, here to help with questions about Mckinly's portfolio. Try asking about contact, services, experience, or skills!"
         };
 
-        function appendMessage(message) {
+        function appendMessage(text, sender) {
             const p = document.createElement('p');
-            p.textContent = message;
+            p.textContent = text;
+            p.classList.add(sender);
             chatOutput.appendChild(p);
             chatOutput.scrollTop = chatOutput.scrollHeight;
         }
 
-        chatSubmit.addEventListener('click', () => {
-            const userMessage = chatInput.value.trim().toLowerCase();
-            if (userMessage) {
-                appendMessage('You: ' + chatInput.value.trim());
-                let reply = responses.default;
-                if (userMessage.includes('contact') || userMessage.includes('email') || userMessage.includes('phone')) {
-                    reply = responses.contact;
-                } else if (userMessage.includes('services')) {
-                    reply = responses.services;
-                } else if (userMessage.includes('experience') || userMessage.includes('job')) {
-                    reply = responses.experience;
-                }
-                setTimeout(() => appendMessage('Grok: ' + reply), 500);
-                chatInput.value = '';
-            }
+        chatSubmit.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
         });
 
-        chatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                chatSubmit.click();
-            }
-        });
+        function sendMessage() {
+            const message = chatInput.value.trim().toLowerCase();
+            if (!message) return;
 
-        // Section Animations on Scroll
+            appendMessage('You: ' + chatInput.value, 'user');
+            chatInput.value = '';
+
+            let reply = responses.default;
+
+            if (message.includes('contact') || message.includes('email') || message.includes('phone') || message.includes('linkedin')) {
+                reply = responses.contact;
+            } else if (message.includes('service') || message.includes('offer')) {
+                reply = responses.services;
+            } else if (message.includes('experience') || message.includes('job') || message.includes('work') || message.includes('amazon') || message.includes('alorica')) {
+                reply = responses.experience;
+            } else if (message.includes('skill')) {
+                reply = responses.skills;
+            }
+
+            setTimeout(() => appendMessage('Grok: ' + reply, 'grok'), 600);
+        }
+
+        // Scroll animations
         const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver(entries => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 });
 
         sections.forEach(section => observer.observe(section));
     </script>
