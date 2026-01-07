@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mckinly Tayag - Professional Portfolio</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Basic SEO -->
+    <meta name="description" content="Mckinly Tayag - Fraud Analyst & Customer Service Professional portfolio with experience at Alorica and Amazon.">
+
+    <!-- Favicon (optional, simple emoji favicon) -->
+    <link rel="icon" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+      <text y='.9em' font-size='90'>M</text>
+    </svg>">
+
+    <style>
+        /* Luxury and Elegant Color Scheme */
+        :root {
+            --primary-dark: #1a1a1a; /* Deep charcoal */
+            --accent-gold: #c0a062; /* Soft gold */
+            --text-white: #ffffff;
+            --secondary-gray: #4d4d4d;
+            --background-gradient: linear-gradient(135deg, #1a1a1a, #333333);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-white);
+            background: var(--primary-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold);
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #e6c078; /* Lighter gold */
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.9);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--background-gradient);
+            padding: 0 2rem;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 1rem auto 0;
+        }
+
+        /* Cards for Experience, Education, Services */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--secondary-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+        }
+
+        .card ul {
+            padding-left: 1.2rem;
+        }
+
+        /* Skills */
+        #skills ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        #skills li {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        #contact {
+            text-align: center;
+        }
+
+        #contact-info {
+            margin-bottom: 2rem;
+        }
+
+        #contact-info p {
+            font-size: 1.1rem;
+        }
+
+        /* Grok Chat Integration - Simple JS Chatbot */
+        #grok-chat {
+            background: var(--secondary-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #chat-output {
+            height: 200px;
+            overflow-y: auto;
+            background: #333;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        #chat-input {
+            width: 70%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+        }
+
+        #chat-submit {
+            padding: 0.5rem 1rem;
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #chat-submit:hover {
+            opacity: 0.9;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Spacing below fixed nav */
+        body::before {
+            content: '';
+            display: block;
+            height: 60px;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2.4rem;
+            }
+
+            #hero p {
+                font-size: 1.1rem;
+            }
+
+            nav ul li {
+                margin: 0 0.8rem;
+            }
+
+            #chat-input {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            #chat-submit {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <h1>Mckinly Tayag</h1>
+        <p>Detail-oriented professional with 1 year of experience in fraud analysis and customer service, specializing in critical thinking, problem solving, and organizational support. Eager to contribute analytical skills and learning agility to drive operational excellence and customer satisfaction.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Detail-oriented professional with 1 year of experience in fraud analysis and customer service, specializing in critical thinking, problem solving, and organizational support. Demonstrated success at Alorica and Amazon, leveraging strong English proficiency and adaptability to resolve complex issues and deliver exceptional customer experiences. Eager to contribute analytical skills and learning agility to your team, driving operational excellence and customer satisfaction.</p>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Fraud Analyst - Alorica</h3>
+                <p>2310 Chino Roces Ave, Makati City, Metro Manila<br>Jul 2025 - Sep 2025</p>
+                <ul>
+                    <li>Analyzed complex data sets to identify fraudulent activities, ensuring high accuracy and minimizing financial risk.</li>
+                    <li>Utilized critical thinking to detect patterns and anomalies, supporting effective fraud prevention strategies.</li>
+                    <li>Collaborated with cross-functional teams to resolve cases efficiently, enhancing customer trust and satisfaction.</li>
+                    <li>Produced meticulous reports and documentation, maintaining compliance with company standards.</li>
+                    <li>Demonstrated adaptability by quickly mastering new fraud detection tools and processes.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Retail Customer Service Associate - Amazon</h3>
+                <p>22 Harbor Dr, Pasay City, Metro Manila<br>Oct 2025 - Jan 2026</p>
+                <ul>
+                    <li>Resolved an average of 60+ customer inquiries daily, consistently achieving a 98% customer satisfaction rating and exceeding Amazon’s service benchmarks.</li>
+                    <li>Identified and escalated complex issues, reducing average resolution time by 25% through proactive communication and collaboration with cross-functional teams.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Senior High School (HUMSS) - San Juan De Dios Educational Foundation, Inc. - College</h3>
+                <p>2022 - 2024</p>
+                <ul>
+                    <li>Developed strong analytical and communication skills through Humanities and Social Sciences curriculum.</li>
+                    <li>Engaged in collaborative projects, enhancing teamwork and leadership abilities.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Junior High School - Pasay City South High School</h3>
+                <p>2018 - 2022</p>
+                <ul>
+                    <li>Built foundational knowledge in core academic subjects, fostering adaptability and a commitment to learning.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Empathy</li>
+            <li>Sales Strategy</li>
+            <li>Communication Skills</li>
+            <li>Soft Skills</li>
+            <li>Confidence To Build Rapport</li>
+            <li>Fraud Detection</li>
+            <li>Fraud Prevention</li>
+            <li>Fraud Analysis</li>
+            <li>Retail</li>
+            <li>Retail Technology</li>
+            <li>Retail Operations</li>
+            <li>Amazon Web Services (AWS)</li>
+            <li>Amazon Connect</li>
+            <li>Amazon S3</li>
+            <li>DoorDash</li>
+            <li>Writing</li>
+            <li>Punctuality</li>
+        </ul>
+    </section>
+
+    <section id="services">
+        <h2>Services I Offer</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Appointment Setting</h3>
+                <p>Leveraging organizational skills and attention to detail, providing efficient appointment setting services to streamline scheduling needs and ensure timely, professional coordination.</p>
+            </div>
+            <div class="card">
+                <h3>Customer Care</h3>
+                <p>Delivering top-tier customer care with a focus on empathy, quick resolution, and building rapport to enhance satisfaction and loyalty.</p>
+            </div>
+            <div class="card">
+                <h3>Sales Representative</h3>
+                <p>Applying sales strategies and relationship-building skills to drive revenue growth, handle client interactions, and close deals in retail or service-oriented environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div id="contact-info">
+            <p>Taguig City, Philippines</p>
+            <p>Email: <a href="mailto:mckinlytayag10@gmail.com">mckinlytayag10@gmail.com</a></p>
+            <p>Phone: +63 9933771030</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/mckinly-tayag-749517218/" target="_blank" rel="noopener noreferrer">mckinly-tayag-749517218</a></p>
+        </div>
+        <div id="grok-chat">
+            <h3>Ask Grok - Your AI Assistant for Inquiries</h3>
+            <p>Ask about my contact info, services, or experience.</p>
+            <div id="chat-output"></div>
+            <div>
+                <input type="text" id="chat-input" placeholder="Type your question...">
+                <button id="chat-submit">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple Grok Chatbot Simulation
+        const chatOutput = document.getElementById('chat-output');
+        const chatInput = document.getElementById('chat-input');
+        const chatSubmit = document.getElementById('chat-submit');
+
+        const responses = {
+            contact: 'You can reach Mckinly at mckinlytayag10@gmail.com or +63 9933771030. LinkedIn: https://www.linkedin.com/in/mckinly-tayag-749517218/',
+            services: 'Mckinly offers Appointment Setting, Customer Care, and Sales Representative services.',
+            experience: 'Mckinly has experience as a Fraud Analyst at Alorica and Retail Customer Service Associate at Amazon.',
+            default: 'Hi! I\'m Grok, assisting with Mckinly\'s portfolio. Ask about contact, services, experience, or skills!'
+        };
+
+        function appendMessage(message) {
+            const p = document.createElement('p');
+            p.textContent = message;
+            chatOutput.appendChild(p);
+            chatOutput.scrollTop = chatOutput.scrollHeight;
+        }
+
+        chatSubmit.addEventListener('click', () => {
+            const userMessage = chatInput.value.trim().toLowerCase();
+            if (userMessage) {
+                appendMessage('You: ' + chatInput.value.trim());
+                let reply = responses.default;
+                if (userMessage.includes('contact') || userMessage.includes('email') || userMessage.includes('phone')) {
+                    reply = responses.contact;
+                } else if (userMessage.includes('services')) {
+                    reply = responses.services;
+                } else if (userMessage.includes('experience') || userMessage.includes('job')) {
+                    reply = responses.experience;
+                }
+                setTimeout(() => appendMessage('Grok: ' + reply), 500);
+                chatInput.value = '';
+            }
+        });
+
+        chatInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                chatSubmit.click();
+            }
+        });
+
+        // Section Animations on Scroll
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>
